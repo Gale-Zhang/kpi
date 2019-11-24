@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gale.dao.PatentDao">
+	<select id="queryByID" resultType="Patent" parameterType="long">
+		SELECT *
+		FROM patent
+		WHERE paperID = #{paperID}
+	</select>
+	<insert id="addPatent" parameterType="Patent">
+		INSERT INTO patent (paperID, teacherID, name, state, time, isInter)
+		VALUES (#{paperID}, #{teacherID}, #{name}, #{state}, #{time}, #{isInter})
+	</insert>
+	<delete id="deletePatent" parameterType="long">
+		DELETE FROM patent WHERE paperID = #{paperID}
+	</delete>
+	<select id="queryAll" resultType="Patent">
+		SELECT *
+		FROM patent
+		ORDER BY  paperID
+		LIMIT #{offset}, #{limit}
+	</select>
+	<select id="queryByTeacherID" resultType="Patent" parameterType="long">
+		SELECT *
+		FROM patent
+		WHERE teacherID = #{teacherID}
+	</select>
+</mapper>

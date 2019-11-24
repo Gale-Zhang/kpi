@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gale.dao.OtherDao">
+	<select id="queryByID" resultType="Other" parameterType="long">
+		SELECT *
+		FROM other
+		WHERE otherID = #{otherID}
+	</select>
+	<insert id="addOther" parameterType="Other">
+		INSERT INTO other ( teacherID, message, kpi)
+		VALUES (#{teacherID}, #{message}, #{kpi})
+	</insert>
+	<delete id="deleteOther" parameterType="long">
+		DELETE FROM other WHERE otherID = #{otherID}
+	</delete>
+	<select id="queryAll" resultType="Other">
+		SELECT *
+		FROM other
+		ORDER BY  otherID
+		LIMIT #{offset}, #{limit}
+	</select>
+	<select id="queryByTeacherID" resultType="Other" parameterType="long">
+		SELECT *
+		FROM other
+		WHERE teacherID = #{teacherID}
+	</select>
+</mapper>

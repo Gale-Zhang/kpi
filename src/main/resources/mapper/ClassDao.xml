@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gale.dao.ClassDao">
+	<select id="queryByID" resultType="Class" parameterType="long">
+		SELECT
+			classID,
+			teacherID,
+			name,
+			theoryduration,
+			experimentduration,
+			computerduration,
+			adjustmentnumber,
+			studentnumber,
+			isEnglish
+		FROM
+			class
+		WHERE
+			classID = #{classID}
+	</select>
+	<insert id="addClass" parameterType="Class">
+		INSERT INTO class (classID, teacherID, name, theoryduration, experimentduration, computerduration, adjustmentnumber, studentnumber, isEnglish)
+		VALUES (#{classID}, #{teacherID}, #{name}, #{theoryduration}, #{experimentduration}, #{computerduration}, #{adjustmentnumber}, #{studentnumber}, #{isEnglish})
+	</insert>
+	<delete id="deleteClass" parameterType="long">
+		DELETE FROM class WHERE classID = #{classID}
+	</delete>
+	<select id="queryAll" resultType="Class">
+		SELECT
+			classID,
+			teacherID,
+			name,
+			theoryduration,
+			experimentduration,
+			computerduration,
+			adjustmentnumber,
+			studentnumber,
+			isEnglish
+		FROM
+			class
+		ORDER BY 
+			classID
+		LIMIT #{offset}, #{limit}
+	</select>
+	<select id="queryByTeacherID" resultType="Class" parameterType="long">
+		SELECT
+			classID,
+			teacherID,
+			name,
+			theoryduration,
+			experimentduration,
+			computerduration,
+			adjustmentnumber,
+			studentnumber,
+			isEnglish
+		FROM
+			class
+		WHERE teacherID = #{teacherID}
+	</select>
+</mapper>

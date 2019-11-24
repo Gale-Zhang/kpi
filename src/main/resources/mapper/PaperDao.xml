@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gale.dao.PaperDao">
+	<select id="queryByID" resultType="Paper" parameterType="long">
+		SELECT *
+		FROM paper
+		WHERE paperID = #{paperID}
+	</select>
+	<insert id="addPaper" parameterType="Paper">
+		INSERT INTO paper (paperID, teacherID, name, time,  book, number, page, type, level)
+		VALUES (#{paperID}, #{teacherID}, #{name}, #{time}, #{book}, #{number}, #{page}, #{type}, #{level})
+	</insert>
+	<delete id="deletePaper" parameterType="long">
+		DELETE FROM paper WHERE paperID = #{paperID}
+	</delete>
+	<select id="queryAll" resultType="Paper">
+		SELECT *
+		FROM paper
+		ORDER BY  paperID
+		LIMIT #{offset}, #{limit}
+	</select>
+	<select id="queryByTeacherID" resultType="Paper" parameterType="long">
+		SELECT *
+		FROM paper
+		WHERE teacherID = #{teacherID}
+	</select>
+</mapper>

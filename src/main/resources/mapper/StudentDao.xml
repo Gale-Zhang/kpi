@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gale.dao.StudentDao">
+	<select id="queryByID" resultType="Student" parameterType="long">
+		SELECT studentID, teacherID, name, type, task
+		FROM student
+		WHERE studentID = #{studentID}
+	</select>
+	<insert id="addStudent" parameterType="Student">
+		INSERT INTO student (studentID, teacherID, name, type, task)
+		VALUES (#{studentID}, #{teacherID}, #{name}, #{type}, #{task})
+	</insert>
+	<delete id="deleteStudent" parameterType="long">
+		DELETE FROM student WHERE studentID = #{studentID}
+	</delete>
+	<select id="queryAll" resultType="Student">
+		SELECT studentID, teacherID, name, type, task
+		FROM student
+		ORDER BY  studentID
+		LIMIT #{offset}, #{limit}
+	</select>
+	<select id="queryByTeacherID" resultType="Student" parameterType="long">
+		SELECT studentID, teacherID, name, type, task
+		FROM student
+		WHERE teacherID = #{teacherID}
+	</select>
+</mapper>
