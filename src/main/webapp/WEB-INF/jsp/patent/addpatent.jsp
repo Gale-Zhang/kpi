@@ -11,10 +11,9 @@
 <div align="center">
 	<form method="get" action="/kpi/patent/add">
 		<p>
-			专利ID<input type="text" name="patentID"><br>
 			教师ID<input type="text" name="teacherID"><br>
 			专利名称<input type="text" name="name"><br>
-			申请时间<input type="text" name="time"><br>
+			申请时间(格式2000-1-1)<input type="text" name="time"><br>
 		</p>
 		<p>
 			状态

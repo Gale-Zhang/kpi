@@ -10,6 +10,6 @@
 <body align="center">
 <h2 align="center">您的输入信息有误，请重新输入</h2><br>
 
-<a href="/kpi">返回</a>
+<a href="/kpi/manage.html">返回</a>
 </body>
 </html>

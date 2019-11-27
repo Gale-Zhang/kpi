@@ -21,7 +21,7 @@
 </form>
 <br>
 <br>
-<a href="/kpi">返回主页</a>
+<a href="/kpi/manage.html">返回主页</a>
 </p>
 
 </body>

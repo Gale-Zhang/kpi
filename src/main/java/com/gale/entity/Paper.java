@@ -15,6 +15,18 @@ public class Paper {
 	public Paper() {
 		
 	}
+	public Paper(long teacherID, String name, String book, String number, String page, Date time,
+			String type, String level) {
+		super();
+		this.teacherID = teacherID;
+		this.name = name;
+		this.book = book;
+		this.number = number;
+		this.page = page;
+		this.time = time;
+		this.type = type;
+		this.level = level;
+	}
 	public Paper(long paperID, long teacherID, String name, String book, String number, String page, Date time,
 			String type, String level) {
 		super();

@@ -4,7 +4,7 @@
 <link href="/kpi/resources/css/mystyle.css" rel="stylesheet" type="text/css" />
 <body align="center">
 <h2 style="font-size:30px">其他贡献</h2>
-<a href="/kpi">返回主页</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/kpi/manage.html">返回主页</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="addother">增加</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="deleteother">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <!-- <a href="findother">查找(待完成)</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

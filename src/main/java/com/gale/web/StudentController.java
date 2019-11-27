@@ -38,7 +38,7 @@ public class StudentController {
 		return "student/detail";
 	}
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	private String add(@RequestParam(value = "studentID") Long studentID, @RequestParam(value = "teacherID") Long teacherID,
+	private String add(@RequestParam(value = "teacherID") Long teacherID,
 			@RequestParam(value = "name") String name, @RequestParam(value = "type") String type,
 			@RequestParam(value = "task") String task, HttpServletRequest req) {
 		Cookie[] cookies = req.getCookies();
@@ -54,7 +54,7 @@ public class StudentController {
 			}
 		}
 		try {
-			Student student = new Student(studentID, teacherID, name, type, task);
+			Student student = new Student(teacherID, name, type, task);
 			studentService.addStudent(student);
 		} catch(Exception e) {
 			return "manage/inputerror";

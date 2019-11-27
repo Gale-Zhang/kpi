@@ -8,6 +8,12 @@ public class Funding {
 	public Funding() {
 		
 	}
+	public Funding(long teacherID, String type, int number) {
+		super();
+		this.teacherID = teacherID;
+		this.type = type;
+		this.number = number;
+	}
 	public Funding(long fundingID, long teacherID, String type, int number) {
 		super();
 		this.fundingID = fundingID;

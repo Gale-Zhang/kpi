@@ -4,7 +4,7 @@
 <link href="/kpi/resources/css/mystyle.css" rel="stylesheet" type="text/css" />
 <body align="center">
 <h2 style="font-size:30px">论文信息</h2>
-<a href="/kpi">返回主页</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/kpi/manage.html">返回主页</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="addpaper">增加</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="deletepaper">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <!-- <a href="findpaper">查找(待完成)</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

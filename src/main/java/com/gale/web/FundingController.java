@@ -38,7 +38,7 @@ public class FundingController {
 		return "funding/detail";
 	}
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	private String add(@RequestParam(value = "fundingID") Long fundingID, @RequestParam(value = "teacherID") Long teacherID,
+	private String add(@RequestParam(value = "teacherID") Long teacherID,
 			@RequestParam(value = "number") Integer number, @RequestParam(value = "type") String type,
 			HttpServletRequest req) {
 		Cookie[] cookies = req.getCookies();
@@ -54,7 +54,7 @@ public class FundingController {
 			}
 		}
 		try {
-			Funding funding = new Funding(fundingID, teacherID, type, number);
+			Funding funding = new Funding(teacherID, type, number);
 			fundingService.addFunding(funding);
 		} catch(Exception e) {
 			return "manage/inputerror";

@@ -40,7 +40,7 @@ public class PatentController {
 		return "patent/detail";
 	}
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	private String add(@RequestParam(value = "patentID") Long patentID, @RequestParam(value = "teacherID") Long teacherID,
+	private String add(@RequestParam(value = "teacherID") Long teacherID,
 			@RequestParam(value = "name") String name, @RequestParam(value = "state") String state,
 			@RequestParam(value = "time") String time, @RequestParam(value = "type") Boolean isIntel, HttpServletRequest req) {
 		Cookie[] cookies = req.getCookies();
@@ -59,7 +59,7 @@ public class PatentController {
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 			java.util.Date date = format.parse(time);
 			Date d = new Date(date.getTime());
-			Patent patent = new Patent(patentID, teacherID, name, state, d, isIntel);
+			Patent patent = new Patent(teacherID, name, state, d, isIntel);
 			patentService.addPatent(patent);
 		} catch(Exception e) {
 			return "manage/inputerror";

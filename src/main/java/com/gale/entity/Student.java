@@ -9,6 +9,13 @@ public class Student {
 	public Student() {
 		
 	}
+	public Student(long teacherID, String name, String type, String task) {
+		super();
+		this.teacherID = teacherID;
+		this.name = name;
+		this.type = type;
+		this.task = task;
+	}
 	public Student(long studentID, long teacherID, String name, String type, String task) {
 		super();
 		this.studentID = studentID;

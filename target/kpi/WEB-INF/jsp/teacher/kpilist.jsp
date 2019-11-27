@@ -4,7 +4,7 @@
 <link href="/kpi/resources/css/mystyle.css" rel="stylesheet" type="text/css" />
 <body align="center">
 <p>
-<h2 style="font-size:30px">KPI</h2><a href="/kpi">返回主页</a>
+<h2 style="font-size:30px">KPI</h2><a href="/kpi/manage.html">返回主页</a>
 </p>
 <form method="get" action="/kpi/teacher/detailkpi">
 	请输入老师工号：<input type="text" name="name"><input type="submit" name="Submit" value="查看详细信息">

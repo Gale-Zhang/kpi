@@ -12,6 +12,15 @@ public class Project {
 	public Project() {
 		
 	}
+	public Project(long teacherID, String name, String types, int funding, Date start, Date end) {
+		super();
+		this.teacherID = teacherID;
+		this.name = name;
+		this.types = types;
+		this.funding = funding;
+		this.start = start;
+		this.end = end;
+	}
 	public Project(long projectID, long teacherID, String name, String types, int funding, Date start, Date end) {
 		super();
 		this.projectID = projectID;

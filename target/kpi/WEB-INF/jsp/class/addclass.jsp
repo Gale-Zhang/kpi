@@ -11,7 +11,6 @@
 <div align="center">
 	<form method="get" action="/kpi/class/add">
 		<p>
-			课程ID<input type="text" name="classID"><br>
 			授课教师ID<input type="text" name="teacherID"><br>
 			课程名称<input type="text" name="name"><br>
 			理论课时<input type="text" name="tduration"><br>

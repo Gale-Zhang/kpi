@@ -4,7 +4,7 @@
 <link href="/kpi/resources/css/mystyle.css" rel="stylesheet" type="text/css" />
 <body align="center">
 <h2 style="font-size:30px">课程信息</h2>
-<a href="/kpi">返回主页</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/kpi/manage.html">返回主页</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="addclass">增加</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="deleteclass">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <!-- <a href="findclass">查找(待完成)</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -16,7 +16,7 @@
 	</tr>
 	<c:forEach var="_class" items="${list}">
 	<tr>
-		<td align="center">${_class.classID}</td><td align="center">${_class.classID}</td>
+		<td align="center">${_class.classID}</td><td align="center">${_class.teacherID}</td>
 		<td align="center">${_class.name}</td><td align="center">${_class.theoryduration}</td>
 		<td align="center">${_class.experimentduration}</td><td align="center">${_class.computerduration}</td>
 		<td align="center">${_class.studentnumber}</td><td align="center">${_class.adjustmentnumber}</td>

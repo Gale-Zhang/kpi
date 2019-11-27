@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gale.dao.ReportDao">
+	<select id="queryByID" resultType="Report" parameterType="long">
+		SELECT *
+		FROM report
+		WHERE reportID = #{reportID}
+	</select>
+	<insert id="addReport" parameterType="Report">
+		INSERT INTO report ( teacherID, type, kpi)
+		VALUES (#{teacherID}, #{type}, #{kpi})
+	</insert>
+	<delete id="deleteReport" parameterType="long">
+		DELETE FROM report WHERE reportID = #{reportID}
+	</delete>
+	<select id="queryAll" resultType="Report">
+		SELECT *
+		FROM report
+		ORDER BY  reportID
+		LIMIT #{offset}, #{limit}
+	</select>
+	<select id="queryByTeacherID" resultType="Report" parameterType="long">
+		SELECT *
+		FROM report
+		WHERE teacherID = #{teacherID}
+	</select>
+</mapper>

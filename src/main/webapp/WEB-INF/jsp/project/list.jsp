@@ -4,7 +4,7 @@
 <link href="/kpi/resources/css/mystyle.css" rel="stylesheet" type="text/css" />
 <body align="center">
 <h2 style="font-size:30px">项目信息</h2>
-<a href="/kpi">返回主页</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/kpi/manage.html">返回主页</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="addproject">增加</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="deleteproject">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <!-- <a href="findproject">查找(待完成)</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

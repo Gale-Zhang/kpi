@@ -7,17 +7,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gale.dao.ClassDao;
+import com.gale.dao.ConversionDao;
 import com.gale.dao.FundingDao;
 import com.gale.dao.OtherDao;
 import com.gale.dao.PaperDao;
 import com.gale.dao.PatentDao;
 import com.gale.service.KpiService;
 import com.gale.dao.ProjectDao;
+import com.gale.dao.ReportDao;
 import com.gale.dao.StudentDao;
 import com.gale.entity.Project;
+import com.gale.entity.Report;
 import com.gale.entity.Student;
 import com.gale.entity.Teacher;
 import com.gale.entity.Class;
+import com.gale.entity.Conversion;
 import com.gale.entity.Funding;
 import com.gale.entity.Other;
 import com.gale.entity.Paper;
@@ -39,6 +43,10 @@ public class KpiServiceImpl implements KpiService {
 	private FundingDao fundingDao;
 	@Autowired
 	private OtherDao otherDao;
+	@Autowired
+	private ReportDao reportDao;
+	@Autowired
+	private ConversionDao conversionDao;
 	
 	private float calStudentKpi(Student s) {
 		switch(s.getType()) {
@@ -81,7 +89,7 @@ public class KpiServiceImpl implements KpiService {
 			return 0;
 	}
 	private float calPaperKpi(Paper paper) {
-		if(paper.getType().equals("科研论文")) {
+		if(paper.getType().equals("科研")) {
 			switch(paper.getLevel()) {
 			case "顶级": return 30;
 			case "一流": return 10;
@@ -105,12 +113,125 @@ public class KpiServiceImpl implements KpiService {
 			return 1;
 	}
 	private float calFundingKpi(Funding funding) {
-		if(funding.getType().equals("纵向科研经费"))
+		if(funding.getType().equals("纵向"))
 			return funding.getNumber() * 0.5f;
 		else
 			return funding.getNumber() * 0.25f;
 	}
+	private float calReportKpi(Report report) {
+		if(report.getType().equals("国内"))
+			return 1;
+		else
+			return 3;
+	}
+	private float calConversionKpi(Conversion conversion) {
+		return conversion.getKpi();
+	}
 
+	@Override
+	public List<Float> calClassKPI(long teacherID) {
+		List<Class> classes = classDao.queryByTeacherID(teacherID);
+		List<Float> res = new ArrayList<Float>();
+		float sum = 0f;
+		for(int i = 0; i < classes.size(); i++) {
+			float cur = calClassKpi(classes.get(i));
+			sum += cur;
+			res.add(cur);
+		}
+		res.add(sum);
+		return res;
+	}
+	@Override
+	public List<Float> calFundingKPI(long teacherID) {
+		List<Funding> fundings = fundingDao.queryByTeacherID(teacherID);
+		List<Float> res = new ArrayList<Float>();
+		float sum = 0f;
+		for(int i = 0; i < fundings.size(); i++) {
+			float cur = calFundingKpi(fundings.get(i));
+			sum += cur;
+			res.add(cur);
+		}
+		res.add(sum);
+		return res;
+	}
+	@Override
+	public List<Float> calProjectKPI(long teacherID) {
+		List<Project> projects = projectDao.queryByTeacherID(teacherID);
+		List<Float> res = new ArrayList<Float>();
+		float sum = 0f;
+		for(int i = 0; i < projects.size(); i++) {
+			float cur = calProjectKpi(projects.get(i));
+			sum += cur;
+			res.add(cur);
+		}
+		res.add(sum);
+		return res;
+	}
+	@Override
+	public List<Float> calPaperKPI(long teacherID) {
+		List<Paper> papers = paperDao.queryByTeacherID(teacherID);
+		List<Float> res = new ArrayList<Float>();
+		float sum = 0f;
+		for(int i = 0; i < papers.size(); i++) {
+			float cur = calPaperKpi(papers.get(i));
+			sum += cur;
+			res.add(cur);
+		}
+		res.add(sum);
+		return res;
+	}
+	@Override
+	public List<Float> calPatentKPI(long teacherID) {
+		List<Patent> patents = patentDao.queryByTeacherID(teacherID);
+		List<Float> res = new ArrayList<Float>();
+		float sum = 0f;
+		for(int i = 0; i < patents.size(); i++) {
+			float cur = calPatentKpi(patents.get(i));
+			sum += cur;
+			res.add(cur);
+		}
+		res.add(sum);
+		return res;
+	}
+	@Override
+	public List<Float> calStudentKPI(long teacherID) {
+		List<Student> students = studentDao.queryByTeacherID(teacherID);
+		List<Float> res = new ArrayList<Float>();
+		float sum = 0f;
+		for(int i = 0; i < students.size(); i++) {
+			float cur = calStudentKpi(students.get(i));
+			sum += cur;
+			res.add(cur);
+		}
+		res.add(sum);
+		return res;
+	}
+	@Override
+	public List<Float> calReportKPI(long teacherID) {
+		List<Report> reports = reportDao.queryByTeacherID(teacherID);
+		List<Float> res = new ArrayList<Float>();
+		float sum = 0f;
+		for(int i = 0; i < reports.size(); i++) {
+			float cur = calReportKpi(reports.get(i));
+			sum += cur;
+			res.add(cur);
+		}
+		res.add(sum);
+		return res;
+	}
+	@Override
+	public List<Float> calConversionKPI(long teacherID) {
+		List<Conversion> conversions = conversionDao.queryByTeacherID(teacherID);
+		List<Float> res = new ArrayList<Float>();
+		float sum = 0f;
+		for(int i = 0; i < conversions.size(); i++) {
+			float cur = calConversionKpi(conversions.get(i));
+			sum += cur;
+			res.add(cur);
+		}
+		res.add(sum);
+		return res;
+	}
 	@Override
 	public List<Float> calKPI(long teacherID) {
 		List<Student> students = studentDao.queryByTeacherID(teacherID);

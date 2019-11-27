@@ -77,3 +77,19 @@ kpi float(32) not null,
 primary key(otherID),
 foreign key(teacherID) references teacher(teacherID)
 )engine=InnoDB auto_increment=1000 default charset=utf8 ;
+create table report(
+reportID bigint(20) not null auto_increment, 
+teacherID bigint(20) not null ,
+type varchar(100) not null ,
+kpi float(32) not null,
+primary key(reportID),
+foreign key(teacherID) references teacher(teacherID)
+)engine=InnoDB auto_increment=1000 default charset=utf8 comment='邀请汇报';
+create table conversion(
+conversionID bigint(20) not null auto_increment, 
+teacherID bigint(20) not null ,
+type varchar(100) not null ,
+kpi float(32) not null,
+primary key(conversionID),
+foreign key(teacherID) references teacher(teacherID)
+)engine=InnoDB auto_increment=1000 default charset=utf8 comment='折算';

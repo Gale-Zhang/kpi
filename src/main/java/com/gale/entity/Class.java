@@ -12,6 +12,16 @@ public class Class {
 	private boolean isEnglish;
 	public Class() {
 	}
+	public Class(long teacherID, String name, int t, int e, int c, int adjustmentnumber, int studentnumber, boolean isEnglish) {
+		this.teacherID = teacherID;
+		this.name = name;
+		this.theoryduration = t;
+		this.experimentduration = e;
+		this.computerduration = c;
+		this.adjustmentnumber = adjustmentnumber;
+		this.studentnumber = studentnumber;
+		this.isEnglish = isEnglish;
+	}
 	public Class(long classID, long teacherID, String name, int t, int e, int c, int adjustmentnumber, int studentnumber, boolean isEnglish) {
 		this.classID = classID;
 		this.teacherID = teacherID;

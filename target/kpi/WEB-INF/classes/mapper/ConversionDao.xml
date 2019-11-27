@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gale.dao.ConversionDao">
+	<select id="queryByID" resultType="Conversion" parameterType="long">
+		SELECT *
+		FROM conversion
+		WHERE conversionID = #{conversionID}
+	</select>
+	<insert id="addConversion" parameterType="Conversion">
+		INSERT INTO conversion ( teacherID, type, kpi)
+		VALUES (#{teacherID}, #{type}, #{kpi})
+	</insert>
+	<delete id="deleteConversion" parameterType="long">
+		DELETE FROM conversion WHERE conversionID = #{conversionID}
+	</delete>
+	<select id="queryAll" resultType="Conversion">
+		SELECT *
+		FROM conversion
+		ORDER BY  conversionID
+		LIMIT #{offset}, #{limit}
+	</select>
+	<select id="queryByTeacherID" resultType="Conversion" parameterType="long">
+		SELECT *
+		FROM conversion
+		WHERE teacherID = #{teacherID}
+	</select>
+</mapper>

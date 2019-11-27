@@ -24,7 +24,7 @@ public class ManageController {
 			//写入cookie
 			Cookie cookie = new Cookie("login", "zjh123456");
 			cookie.setPath("/kpi");
-			cookie.setMaxAge(360);
+			cookie.setMaxAge(7200);
 			resp.addCookie(cookie);
 			flag = true;
 		}

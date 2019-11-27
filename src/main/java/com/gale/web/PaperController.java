@@ -40,7 +40,7 @@ public class PaperController {
 		return "paper/detail";
 	}
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	private String add(@RequestParam(value = "paperID") Long paperID, @RequestParam(value = "teacherID") Long teacherID,
+	private String add(@RequestParam(value = "teacherID") Long teacherID,
 			@RequestParam(value = "name") String name, @RequestParam(value = "book") String book,
 			@RequestParam(value = "number") String number, @RequestParam(value = "page") String page, 
 			@RequestParam(value = "type") String type, @RequestParam(value = "level") String level, 
@@ -58,10 +58,11 @@ public class PaperController {
 			}
 		}
 		try {
+			time += "-01-01";
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 			java.util.Date date = format.parse(time);
 			Date d = new Date(date.getTime());
-			Paper paper = new Paper(paperID, teacherID, name, book, number, page, d, type, level);
+			Paper paper = new Paper(teacherID, name, book, number, page, d, type, level);
 			paperService.addPaper(paper);
 		} catch(Exception e) {
 			return "manage/inputerror";

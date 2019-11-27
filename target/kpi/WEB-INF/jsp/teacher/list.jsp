@@ -4,7 +4,7 @@
 <link href="/kpi/resources/css/mystyle.css" rel="stylesheet" type="text/css" />
 <body align="center">
 <h2 style="font-size:30px">教师名单</h2>
-<a href="/kpi">返回主页</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/kpi/manage.html">返回主页</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="addteacher">增加</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="deleteteacher">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <!-- <a href="findteacher">查找(待完成)</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

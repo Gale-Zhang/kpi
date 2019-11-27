@@ -11,18 +11,17 @@
 <div align="center">
 	<form method="get" action="/kpi/paper/add">
 		<p>
-			论文ID<input type="text" name="paperID"><br>
 			教师ID<input type="text" name="teacherID"><br>
 			论文名称<input type="text" name="name"><br>
 			期刊<input type="text" name="book"><br>
 			卷号<input type="text" name="number"><br>
 			页码<input type="text" name="page"><br>
-			时间<input type="text" name="time"><br>
+			年份<input type="text" name="time"><br>
 		</p>
 		<p>
 			类型
-			<input type="radio" name="type" value="科研论文">科研论文
-			<input type="radio" name="type" value="教学论文">教学论文
+			<input type="radio" name="type" value="科研">科研
+			<input type="radio" name="type" value="教研">教研
 			<br>
 		</p>
 		<p>

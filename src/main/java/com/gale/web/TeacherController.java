@@ -41,7 +41,7 @@ public class TeacherController {
 		return "teacher/detail";
 	}
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	private String add(@RequestParam(value = "ID") String teacherID, @RequestParam(value = "name") String name, HttpServletRequest req) {
+	private String add(@RequestParam(value = "name") String name, HttpServletRequest req) {
 		try {
 			Cookie[] cookies = req.getCookies();
 			if(cookies == null)
@@ -55,7 +55,7 @@ public class TeacherController {
 						return "manage/loginfirst";
 				}
 			}
-			Teacher teacher = new Teacher(teacherID, name);
+			Teacher teacher = new Teacher(name);
 			teacherService.addTeacher(teacher);
 		} catch(Exception e) {
 			return "manage/inputerror";

@@ -11,7 +11,6 @@
 <div align="center">
 	<form method="get" action="/kpi/student/add">
 		<p>
-			学生ID<input type="text" name="studentID"><br>
 			教师ID<input type="text" name="teacherID"><br>
 			学生姓名<input type="text" name="name"><br>
 			研究课题<input type="text" name="task"><br>

@@ -16,7 +16,7 @@
 			<input type="submit" name="Submit" value="提交">
 		</p>
 	</form><br><br><br><br><br><br>
-	<a href="/kpi">返回主页</a>
+	<a href="/kpi/manage.html">返回主页</a>
 </div>
 </body>
 </html>

@@ -12,7 +12,6 @@
 	<form method="get" action="/kpi/teacher/add">
 		<p>
 			教师姓名<input type="text" name="name"><br>
-			教师工号<input type="text" name="ID">
 		</p>
 		<p>
 			<input type="submit" name="Submit" value="提交">

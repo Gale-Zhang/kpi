@@ -11,14 +11,13 @@
 <div align="center">
 	<form method="get" action="/kpi/funding/add">
 		<p>
-			经费ID<input type="text" name="fundingID"><br>
 			教师ID<input type="text" name="teacherID"><br>
 			经费数目<input type="text" name="number"><br>
 		</p>
 		<p>
 			经费类型
-			<input type="radio" name="type" value="纵向科研经费">纵向科研经费
-			<input type="radio" name="type" value="横向科研经费">横向科研经费
+			<input type="radio" name="type" value="纵向">纵向
+			<input type="radio" name="type" value="横向">横向
 			<br>
 		</p>
 		<p>

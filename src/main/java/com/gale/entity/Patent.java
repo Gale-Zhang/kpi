@@ -12,6 +12,14 @@ public class Patent {
 	public Patent() {
 		
 	}
+	public Patent(long teacherID, String name, String state, Date time, boolean isInter) {
+		super();
+		this.teacherID = teacherID;
+		this.name = name;
+		this.state = state;
+		this.time = time;
+		this.isInter = isInter;
+	}
 	public Patent(long paperID, long teacherID, String name, String state, Date time, boolean isInter) {
 		super();
 		this.paperID = paperID;

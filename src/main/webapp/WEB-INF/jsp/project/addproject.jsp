@@ -11,7 +11,6 @@
 <div align="center">
 	<form method="get" action="/kpi/project/add">
 		<p>
-			项目ID<input type="text" name="projectID"><br>
 			教师ID<input type="text" name="teacherID"><br>
 			项目名称<input type="text" name="name"><br>
 			项目类型<input type="text" name="types"><br>

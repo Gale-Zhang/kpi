@@ -40,7 +40,7 @@ public class ProjectController {
 		return "project/detail";
 	}
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	private String add(@RequestParam(value = "projectID") Long projectID, @RequestParam(value = "teacherID") Long teacherID,
+	private String add(@RequestParam(value = "teacherID") Long teacherID,
 			@RequestParam(value = "name") String name, @RequestParam(value = "types") String types,
 			@RequestParam(value = "funding") Integer funding, @RequestParam(value = "start") String start,
 			@RequestParam(value = "end") String end, HttpServletRequest req) {
@@ -62,7 +62,7 @@ public class ProjectController {
 			Date s = new Date(date.getTime());
 			date = format.parse(end);
 			Date e = new Date(date.getTime());
-			Project project = new Project(projectID, teacherID, name, types, funding, s, e);
+			Project project = new Project(teacherID, name, types, funding, s, e);
 			projectService.addProject(project);
 		} catch(Exception e) {
 			e.printStackTrace();

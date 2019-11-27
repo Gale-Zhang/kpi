@@ -38,7 +38,7 @@ public class ClassController {
 		return "class/detail";
 	}
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	private String add(@RequestParam(value = "classID") Long classID, @RequestParam(value = "name") String name,
+	private String add(@RequestParam(value = "name") String name,
 			@RequestParam(value = "teacherID") Long teacherID, @RequestParam(value = "tduration") Integer t,
 			@RequestParam(value = "eduration") Integer e, @RequestParam(value = "cduration") Integer c,
 			@RequestParam(value = "studentnumber") Integer n, @RequestParam(value = "adjustmentnumber") Integer a,
@@ -56,7 +56,7 @@ public class ClassController {
 			}
 		}
 		try {
-			Class _class = new Class(classID, teacherID, name, t, e, c, a, n, isEnglish);
+			Class _class = new Class(teacherID, name, t, e, c, a, n, isEnglish);
 			classService.addClass(_class);
 		} catch(Exception exp) {
 			return "manage/inputerror";
